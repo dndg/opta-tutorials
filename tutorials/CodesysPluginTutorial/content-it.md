@@ -62,7 +62,11 @@ Per verificare che il plug-in sia stato installato correttamente, controlla l’
 
 ### Verifica della corretta installazione
 
-Chiudi CODESYS Installer e riapri CODESYS. A questo punto, collega il PLC Finder OPTA al computer utilizzando il cavo USB-C e crea un nuovo progetto standard:
+Ora chiudi CODESYS Installer:
+
+![Progetto standard](assets/exit_installer.png)
+
+Riapri CODESYS. A questo punto, collega il PLC Finder OPTA al computer utilizzando il cavo USB-C e crea un nuovo progetto standard:
 
 ![Progetto standard](assets/project.png)
 
