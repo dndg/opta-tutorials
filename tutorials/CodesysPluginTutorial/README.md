@@ -4,4 +4,5 @@ This tutorial provides step-by-step instruction for installing the official Find
 
 The tutorial is available in:
 
+- [English](./content.md)
 - [Italian](./content-it.md)
