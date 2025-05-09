@@ -50,32 +50,32 @@ comunicazione Modbus con il Finder serie 7M sono:
 * Parity: `NO`.
 
 Possiamo impostare questi valori tramite NFC utilizzando [l'applicazione Finder
-Toolbox](https://www.findernet.com/it/italia/supporto/software-e-app/).
+Toolbox NFC](https://www.findernet.com/it/italia/supporto/software-e-app/).
 
 ### Creazione progetto CODESYS
 
-Apri CODESYS:
+Apri CODESYS.
 
 ![Open CODESYS](assets/it/01-welcome.png)
 
-Crea un nuovo progetto e scegli `Progetto standard`:
+Crea un nuovo progetto e scegli `Progetto standard`.
 
 ![New project](assets/it/02-new-project.png)
 
 Assicurati che il dispositivo sia `Finder Opta`, poi seleziona il 
-linguaggio del programma (in seguito usiamo ST):
+linguaggio del programma (in seguito usiamo ST).
 
 ![Standard project](assets/it/03-standard-project.png)
 
 ### Identificazione Finder OPTA via Ethernet
 
 A questo punto fai doppio click sulla voce `Device (Finder Opta)` 
-del menu `Devices`, si aprirà una scheda come mostrato qui sotto:
+del menu `Devices`, si aprirà una scheda come mostrato qui sotto.
 
 ![Device](assets/it/04-device.png)
 
 Premi il bottone `Sfoglia la rete` e assicurati di vedere il
-dispositivo Finder OPTA comparire sotto il Gateway:
+dispositivo Finder OPTA comparire sotto il Gateway.
 
 ![Scan Network](assets/it/05-scan-network.png)
 
@@ -164,7 +164,7 @@ END_VAR
 
 ![Program Variables](assets/it/17-program-variables.png)
 
-Nella parte inferiore dell'editor inserisci il seguente codice:
+In the lower part of the editor, insert the following code:
 
 ```st
 // Flip endianness
