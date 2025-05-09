@@ -5,13 +5,13 @@
 CODESYS è uno dei principali ambienti di sviluppo per PLC e consente di
 programmare Finder OPTA con linguaggi standard, come LD e ST.
 
-Questo tutorial guida alla lettura di un serie 7M Finder con Finder OPTA 
+Questo tutorial guida alla lettura di un Finder serie 7M con Finder OPTA 
 in pochi semplici passi.
 
 ## Obbiettivi
 
-- Configurare Finder OPTA tramite Ethernet per la lettura dei registri di un serie 7M Finder
-- Leggere i registri di un serie 7M Finder tramite Modbus RTU
+- Configurare Finder OPTA tramite Ethernet per la lettura dei registri di un Finder serie 7M in CODESYS
+- Leggere i registri di un Finder serie 7M tramite Modbus RTU in CODESYS
 
 ## Requisiti
 
@@ -26,10 +26,10 @@ Prima di iniziare, assicurati di avere:
 - Cavo Ethernet (x1)
 - Ambiente di sviluppo CODESYS installato con plug-in OPTA Configurator.
   Trovi una guida all'installazione [a questo
-   link](https://opta.findernet.com/it/tutorial/codesys-plugin-tutorial)
+   link](https://opta.findernet.com/it/tutorial/codesys-plugin-tutorial).
 - Rete configurata correttamente: il PC deve comunicare correttamente con 
   Finder OPTA tramite Ethernet. Trovi una guida alla configurazione [a 
-  questo link](https://opta.findernet.com/it/tutorial/codesys-via-ethernet)
+  questo link](https://opta.findernet.com/it/tutorial/codesys-via-ethernet).
 
 Per seguire questo tutorial, sarà necessario collegare il contatore di energia Finder 
 serie 7M alla rete elettrica e fornire un carico adeguato. Sarà inoltre necessario 
