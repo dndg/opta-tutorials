@@ -56,30 +56,30 @@ Toolbox](https://www.findernet.com/it/italia/supporto/software-e-app/).
 
 Apri CODESYS:
 
-![Apri CODESYS](assets/it/01-welcome.png)
+![Open CODESYS](assets/it/01-welcome.png)
 
 Crea un nuovo progetto e scegli `Progetto standard`:
 
-![Nuovo progetto](assets/it/02-new-project.png)
+![New project](assets/it/02-new-project.png)
 
 Assicurati che il dispositivo sia `Finder Opta`, poi seleziona il 
 linguaggio del programma (in seguito usiamo ST):
 
-![Progetto standard](assets/it/03-standard-project.png)
+![Standard project](assets/it/03-standard-project.png)
 
 ### Identificazione Finder OPTA via Ethernet
 
 A questo punto fai doppio click sulla voce `Device (Finder Opta)` 
 del menu `Devices`, si aprirà una scheda come mostrato qui sotto:
 
-![Dispositivo](assets/it/04-device.png)
+![Device](assets/it/04-device.png)
 
 Premi il bottone `Sfoglia la rete` e assicurati di vedere il
 dispositivo Finder OPTA comparire sotto il Gateway:
 
 ![Scan Network](assets/it/05-scan-network.png)
 
-### Configurazione registri Modbus
+### Configurazione Modbus
 
 Adesso che hai verificato la connessione tra PC e Finder OPTA, premi 
 il tasto destro sulla voce `Device (Finder Opta)` e seleziona `Aggiungi 
@@ -140,6 +140,7 @@ Dopo aver premuto `OK` vedrai il riepilogo del canale appena impostato.
 
 ![Set Channel](assets/it/15-set-channel.png)
 
+### Preparazione del programma ST
 
 Adesso scriviamo il programma ST che legge il valore di frequenza. 
 Il programma ha il compito di invertire la endianness dei byte letti dai 
@@ -193,7 +194,7 @@ Il riepilogo mostra la variabile assegnata al canale `Frequenza`.
 
 ![Variable Summary](assets/it/21-variable-summary.png)
 
-#### Caricamento del programma su Finder OPTA
+### Caricamento del programma su Finder OPTA
 
 Adesso puoi caricare il programma sul dispositivo premendo 
 il pulsante verde in alto etichettato come `Login`.
