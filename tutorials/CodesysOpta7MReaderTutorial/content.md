@@ -8,23 +8,23 @@ This tutorial guides you through reading a Finder 7M series device with Finder O
 
 ## Objectives
 
-- Configure Finder OPTA via Ethernet to read registers from a Finder 7M series device  
-- Read registers from a Finder 7M series device via Modbus RTU
+- Configure Finder OPTA via Ethernet to read registers from a Finder 7M series device in CODESYS.
+- Read registers from a Finder 7M series device via Modbus RTU CODESYS.
 
 ## Requirements
 
 Before starting, make sure you have:
 
-- [Finder OPTA CODESYS PLC](https://opta.findernet.com/en/codesys) (x1)  
-- [12W or 25W switching power supply for OPTA](https://opta.findernet.com/en/codesys#moduli-espansione) (1x)  
+- [Finder OPTA CODESYS PLC](https://opta.findernet.com/en/codesys) (x1)
+- [12W or 25W switching power supply for OPTA](https://opta.findernet.com/en/codesys#moduli-espansione) (1x)
 - Finder 7M series with Modbus RTU (x1)  
     - [7M.24.8230.0210](https://www.findernet.com/en/worldwide/series/serie-7m-contatori-di-energia/type/tipo-7m-24-contatore-di-energia-monofase-bidirezionale-con-display-lcd/)  
     - [7M.38.8400.0212](https://www.findernet.com/en/worldwide/series/serie-7m-contatori-di-energia/type/tipo-7m-38-contatori-di-energia-multifunzione-bidirezionale-80-a/)  
 - Ethernet cable (x1)  
 - CODESYS development environment installed with the OPTA Configurator plug-in.  
-  You can find an installation guide [at this link](https://opta.findernet.com/en/tutorial/codesys-plugin-tutorial)  
+  You can find an installation guide [at this link](https://opta.findernet.com/en/tutorial/codesys-plugin-tutorial).  
 - Properly configured network: your PC must be able to communicate with Finder OPTA via Ethernet.  
-  Configuration guide available [here](https://opta.findernet.com/en/tutorial/codesys-via-ethernet)
+  Configuration guide available [here](https://opta.findernet.com/en/tutorial/codesys-via-ethernet).
 
 To follow this tutorial, you will need to connect the Finder 7M energy meter to the electrical grid and provide an appropriate load. You will also need to power the Finder OPTA using the power supply and properly configure the RS-485 serial connection. The diagram below shows the correct wiring between Finder OPTA and the Finder 7M series.
 
@@ -34,10 +34,10 @@ To follow this tutorial, you will need to connect the Finder 7M energy meter to 
 
 In this tutorial, the configuration parameters used for Modbus communication with the Finder 7M series are:
 
-* Modbus Address: `1`  
-* Baudrate: `38400`  
-* Stop bit: `1`  
-* Parity: `NO`
+* Modbus Address: `1`.
+* Baudrate: `38400`.
+* Stop bit: `1`.
+* Parity: `NO`.
 
 You can set these values via NFC using the [Finder Toolbox NFC application](https://www.findernet.com/en/worldwide/supporto/software-e-app/).
 
@@ -77,11 +77,11 @@ From the list, select `Modbus COM Port` and click `Add Device`.
 
 Now set the serial port values:
 
-* COM Port: `2`, which is the RS-485 port of Finder OPTA  
-* Baudrate: `38400`  
-* Parity: `NONE`  
-* Data bits: `8`  
-* Stop bits: `1`
+* COM Port: `2`, which is the RS-485 port of Finder OPTA.
+* Baudrate: `38400`.
+* Parity: `NONE`.
+* Data bits: `8`. 
+* Stop bits: `1`.
 
 ![Set Modbus COM port](assets/en/08-set-modbus-com-port.png)
 
@@ -108,13 +108,13 @@ Click the newly added item in the side menu and ensure the `Server Address` is `
 On the same screen, click `Modbus Server Channel` and then `Add Channel` at the bottom right.  
 In this tutorial, we’ll read the frequency value from the Finder 7M. As defined in the [device technical manual](https://cdn.findernet.com/app/uploads/2021/09/20090052/Modbus-7M24-7M38_v2_30062021.pdf), the frequency value is in Input Registers `32498` and `32499` in `float` format. Set the channel values as follows:
 
-* Name: `Frequency`  
-* Access Type: `Read Input Registers (Function Code 4)`  
-* Trigger: `Cyclic`  
-* Cycle Time: `1000` (one read per second)  
-* Offset: `2498`  
-* Length: `2`  
-* Error Handling: `Keep last value`
+* Name: `Frequency`.
+* Access Type: `Read Input Registers (Function Code 4)`.
+* Trigger: `Cyclic`.
+* Cycle Time: `1000` (one read per second).
+* Offset: `2498`.
+* Length: `2`.
+* Error Handling: `Keep last value`.
 
 ![Add Channel](assets/en/14-add-channel.png)
 
