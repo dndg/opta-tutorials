@@ -70,7 +70,7 @@ linguaggio del programma (in seguito usiamo ST).
 ### Identificazione Finder OPTA via Ethernet
 
 A questo punto fai doppio click sulla voce `Device (Finder Opta)` 
-del menu `Devices`, si aprirà una scheda come mostrato qui sotto.
+del menu `Dispositivi`, si aprirà una scheda come mostrato qui sotto.
 
 ![Device](assets/it/04-device.png)
 
@@ -130,7 +130,7 @@ il valore di frequenza è contenuto negli Input Register `32498` e `32499` in fo
 * Tipo di accesso: `Read Input Registers (Codice funzione 4)`.
 * Trigger: `Ciclico`.
 * Tempo di ciclo: `1000`, ovvero una lettura al secondo.
-* Offset: `2498`, .
+* Offset: `2498`.
 * Lunghezza: `2`.
 * Trattamento errore: `Mantieni ultimo valore`.
 
@@ -164,7 +164,7 @@ END_VAR
 
 ![Program Variables](assets/it/17-program-variables.png)
 
-In the lower part of the editor, insert the following code:
+Nella parte inferiore dell'editor inserisci il seguente codice:
 
 ```st
 // Flip endianness
