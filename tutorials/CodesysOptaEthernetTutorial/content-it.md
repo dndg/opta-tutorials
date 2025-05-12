@@ -2,10 +2,7 @@
 
 ## Panoramica
 
-CODESYS è uno dei principali ambienti di sviluppo per PLC e consente di programmare Finder OPTA con linguaggi standard, come LD e
-ST.
-
-Questo tutorial guida alla programmazione di Finder OPTA in pochi semplici passi.
+Questo tutorial fornisce una guida per programmare il Finder OPTA tramite Ethernet utilizzando CODESYS.
 
 ## Obbiettivi
 

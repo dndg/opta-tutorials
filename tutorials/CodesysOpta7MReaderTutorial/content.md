@@ -2,12 +2,7 @@
 
 ## Overview
 
-CODESYS is one of the leading development environments for PLCs and allows you to program Finder OPTA using standard languages such
-as LD and ST.
-
-Finder OPTA is equipped with an RS-485 port that enables communication with devices compatible with the Modbus RTU protocol, such as
-the Finder 7M series. In this tutorial, we will show step by step how to configure Finder OPTA in CODESYS to correctly read data
-from a Finder 7M series energy meter.
+Finder OPTA is equipped with an RS-485 port that enables communication with devices compatible with the Modbus RTU protocol, such as the Finder 7M series. In this tutorial, we will show step by step how to configure Finder OPTA in CODESYS to correctly read data from a Finder 7M series energy meter.
 
 ## Objectives
 
