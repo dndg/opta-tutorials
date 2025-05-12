@@ -171,6 +171,8 @@ frequency := ptr^;
 
 ![Program Code](assets/en/18-program-code.png)
 
+Now it is necessary to link the program variables to the Modbus channel, so that the variables contain the values read from the channel.
+
 In the side menu, double-click on `Server_Modbus_porta_COM`. Now click on the  
 `ModbusGenericSerialServer mapping I/O` section, and in the table double-click on the `Variable`  
 cell to bring up the options button.

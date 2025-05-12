@@ -174,7 +174,7 @@ frequency := ptr^;
 
 ![Program Code](assets/it/18-program-code.png)
 
-Adesso è necessario associare le variabili del programma agli indirizzi di memoria del Finder OPTA effettivi.
+Adesso è necessario associare le variabili del programma al canale Modbus, in modo che le variabili contengano i valori letti dal canale.
 
 Nel menu laterale clicca due volte su `Server_Modbus_porta_COM`. Adesso clicca sulla sezione `ModbusGenericSerialServer mapping I/O`
 e nella tabella clicca due volte sulla cella `Variabile` per far comparire il pulsante opzioni.
