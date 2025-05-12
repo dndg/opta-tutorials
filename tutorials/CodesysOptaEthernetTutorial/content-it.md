@@ -2,7 +2,7 @@
 
 ## Panoramica
 
-Questo tutorial fornisce una guida per programmare il Finder OPTA tramite Ethernet utilizzando CODESYS.
+Questo tutorial fornisce una guida per programmare Finder OPTA tramite Ethernet utilizzando CODESYS.
 
 ## Obbiettivi
 
