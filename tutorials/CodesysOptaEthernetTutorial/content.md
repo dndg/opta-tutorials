@@ -29,19 +29,19 @@ address within the range defined by the subnet.
 
 ### Setting the PC’s IP Address
 
-To change your Windows PC’s IP address, open **Settings** and go to **Network & Internet**:
+To change your Windows PC’s IP address, open `Settings` and go to `Network & Internet`.
 
 ![Network Settings](assets/en/set-ip-address-windows/01-settings-network.png)
 
-Select **Ethernet**:
+Select `Ethernet`.
 
 ![Ethernet](assets/en/set-ip-address-windows/02-ethernet.png)
 
-Click **Edit**:
+Click `Edit`.
 
 ![Edit IP](assets/en/set-ip-address-windows/03-edit-ip-address.png)
 
-Replace the existing address with **10.0.0.1**:
+Replace the existing address with `10.0.0.1`.
 
 ![New IP](assets/en/set-ip-address-windows/04-new-ip-address.png)
 
@@ -57,21 +57,21 @@ Open CODESYS:
 
 ![Open CODESYS](assets/en/01-welcome.png)
 
-Create a new project and choose **Standard Project**:
+Create a new project and choose `Standard Project`.
 
 ![New Project](assets/en/02-new-project.png)
 
-Ensure the device is **Finder OPTA**, then select your programming language:
+Ensure the device is `Finder OPTA`, then select your programming language.
 
 ![Standard Project](assets/en/03-standard-project.png)
 
 #### Detecting Finder OPTA over Ethernet
 
-Now double-click **Device (Finder OPTA)** in the **Devices** tree; a pane like this will open:
+Now double-click `Device (Finder OPTA)` in the `Devices` tree; a pane like this will open.
 
 ![Device](assets/en/04-device.png)
 
-Click **Scan Network** and confirm you see the Finder OPTA device appear under the Gateway:
+Click `Scan Network` and confirm you see the Finder OPTA device appear under the Gateway.
 
 ![Scan Network](assets/en/05-scan-network.png)
 
@@ -80,11 +80,14 @@ Click **Scan Network** and confirm you see the Finder OPTA device appear under t
 If you already have an ST program to upload to OPTA, skip the next steps and go directly to [Uploading the Program to Finder
 OPTA](#uploading-the-program-to-finder-opta).
 
-Double-click the program name under **Devices** (here it’s **PLC_PRG (PRG)**):
+The program we use below is simply intended to verify whether the configuration has been correctly loaded. Its function is to
+sequentially turn on the LEDs of the Finder OPTA.
+
+Double-click the program name under `Devices` (here it’s `PLC_PRG (PRG)`).
 
 ![LED Programming](assets/en/06-led-program.png)
 
-Copy the following ST code:
+Copy the following ST code.
 
 ```st
 PROGRAM PLC_PRG
@@ -118,16 +121,17 @@ IF timer.Q THEN
 END_IF
 ```
 
-Next, double-click **I/O** under **Devices**, then select **Opta I/O Mapping**:
+To enable the code to control the LEDs, it is necessary to associate the variables defined within it with the LEDs on the Finder
+OPTA. Access the variable mapping menu by double-clicking on the `I/O` item in the `Devices` menu and selecting `Opta I/O Mapping`.
 
 ![LED Mapping](assets/en/07-led-mapping.png)
 
-Double-click a variable cell to show the options button, click it, expand **Application**, then expand your program name to reveal
-the LED variables:
+Double-click a variable cell to show the options button, click it, expand `Application`, then expand your program name to reveal
+the LED variables.
 
 ![LED Variables](assets/en/08-led-variables.png)
 
-Map each LED to its corresponding variable until it looks like this:
+Map each LED to its corresponding variable until it looks like this.
 
 ![Mapping Complete](assets/en/09-mapping-complete.png)
 
@@ -136,19 +140,19 @@ Map each LED to its corresponding variable until it looks like this:
 At this stage, CODESYS downloads the program and configuration to the device. This step is essential to properly update the device’s
 configuration, especially if the Finder OPTA still contains an outdated setup.
 
-Now upload the program and the configuration by clicking the green **Login** button at the top:
+Now upload the program and the configuration by clicking the green `Login` button at the top.
 
 ![Login](assets/en/10-login.png)
 
-After it loads, press **Start** to run the program:
+After it loads, press `Start` to run the program.
 
 ![Start](assets/en/11-start.png)
 
-The program will start, and the four LEDs on OPTA will begin cycling on and off. To stop it, click **Stop**:
+The program will start, and the four LEDs on OPTA will begin cycling on and off. To stop it, click `Stop`.
 
 ![Stop](assets/en/12-stop.png)
 
-Finally, disconnect by clicking **Logout**:
+Finally, disconnect by clicking `Logout`.
 
 ![Logout](assets/en/13-logout.png)
 
