@@ -77,7 +77,7 @@ In this section, we will configure the Ethernet network parameters of Finder OPT
 
 From the menu, expand `Ethernet` and choose `Ethernet Adapter` to add it to Finder OPTA.
 
-![Ethernet Details](assets/en/10-add-ethernet.-adapter.png)
+![Ethernet Details](assets/en/10-add-ethernet-adapter.png)
 
 Then, double-click on the newly added `Ethernet` entry in the side menu.
 
