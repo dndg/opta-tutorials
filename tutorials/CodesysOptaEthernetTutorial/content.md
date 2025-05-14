@@ -140,7 +140,7 @@ Map each LED to its corresponding variable until it looks like this.
 At this stage, CODESYS downloads the program and configuration to the device. This step is essential to properly update the device’s
 configuration, especially if the Finder OPTA still contains an outdated setup.
 
-Now upload the program and the configuration by clicking the green `Login` button at the top.
+Download the program and the configuration by clicking the green `Login` button at the top.
 
 ![Login](assets/en/10-login.png)
 

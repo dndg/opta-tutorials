@@ -16,8 +16,7 @@ Prima di iniziare, assicurati di avere:
 - [PLC Finder OPTA CODESYS](https://opta.findernet.com/it/codesys) (x1)
 - [Alimentatore switching 12W o 25W per OPTA](https://opta.findernet.com/it/codesys#moduli-espansione) (1x)
 - Cavo Ethernet (x1)
-- Ambiente di sviluppo CODESYS installato con plug-in OPTA Configurator. Trovi una guida all'installazione [a questo
-  link](https://opta.findernet.com/it/tutorial/codesys-plugin-tutorial).
+- Ambiente di sviluppo CODESYS installato con plug-in OPTA Configurator. Trovi una guida all'installazione [a questo link](https://opta.findernet.com/it/tutorial/codesys-plugin-tutorial).
 
 ## Istruzioni
 
@@ -141,7 +140,7 @@ Associa ogni LED alla variabile corrispondente fino ad arrivare ad una situazion
 In questa fase, CODESYS scarica il programma e la configurazione sul dispositivo. Questo passaggio è fondamentale per aggiornare
 correttamente la configurazione del dispositivo, soprattutto se il Finder OPTA contiene ancora una configurazione obsoleta.
 
-Adesso è possibile caricare il programma e la configurazione sul dispositivo premendo il pulsante verde in alto etichettato come
+Scarica il programma e la configurazione sul dispositivo premendo il pulsante verde in alto etichettato come
 `Login`.
 
 ![Login](assets/it/10-login.png)
