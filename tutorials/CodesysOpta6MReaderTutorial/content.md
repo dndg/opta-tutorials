@@ -2,7 +2,7 @@
 
 ## Overview
 
-Finder OPTA is equipped with an RS-485 port that allows communication with devices compatible with the Modbus RTU protocol, such asthe Finder 6M series. In this tutorial, we will show step-by-step how to configure Finder OPTA in CODESYS to correctly read datafrom a Finder 6M series network analyzer.
+Finder OPTA is equipped with an RS-485 port that allows communication with devices compatible with the Modbus RTU protocol, such as the Finder 6M series. In this tutorial, we will show step-by-step how to configure Finder OPTA in CODESYS to correctly read data from a Finder 6M series power analyzer.
 
 ## Goals
 
@@ -15,7 +15,7 @@ Before you begin, make sure you have:
 
 - [PLC Finder OPTA CODESYS](https://opta.findernet.com/en/codesys) (x1)
 - [12W or 25W switching power supply for OPTA](https://opta.findernet.com/en/codesys#moduli-espansione)(1x)
-- Finder 6M series network analyzer (x1)
+- Finder 6M series power analyzer (x1)
   - [6M.TA.9.024.1200](https://www.findernet.com/en/worldwide/series/serie-6m-analizzatori-di-rete/type/tipo-6mta-analizzatore-di-rete-monofase/)
   - [6M.TB.9.024.1200](https://www.findernet.com/en/worldwide/series/serie-6m-analizzatori-di-rete/type/tipo-6mtb-analizzatore-di-rete-monofase/)
   - [6M.TF.9.024.1200](https://www.findernet.com/en/worldwide/series/serie-6m-analizzatori-di-rete/type/tipo-6mtf-analizzatore-di-rete-monofase/)
@@ -28,7 +28,7 @@ Before you begin, make sure you have:
 - Properly configured network: the PC must communicate correctly with Finder OPTA via Ethernet. Configuration guide is available [at
   this link](https://opta.findernet.com/en/tutorial/codesys-via-ethernet).
 
-To follow this tutorial, you will need to connect the Finder 6M series network analyzer to the power supply and provide a suitable
+To follow this tutorial, you will need to connect the Finder 6M series power analyzer to the power supply and provide a suitable
 load. You will also need to power Finder OPTA with a 12-24VDC/500mA power supply and properly configure the RS-485 serial
 connection. The diagram below shows the correct configuration of the connections between Finder OPTA and the Finder 6M series.
 
@@ -43,7 +43,7 @@ are:
 
 We can set these values **by setting both DIP switches of the Finder 6M series to the `UP` position**, as shown in the figure below.
 
-![Finder 6M series diagram](assets/6m-diagram.svg)
+![Finder 6M series diagram](assets/6M-diagram.svg)
 
 ## Instructions
 
@@ -67,7 +67,7 @@ Now double-click on the `Device (Finder Opta)` entry in the `Devices` menu, a ta
 
 ![Device](assets/en/04-device.png)
 
-Press the `Browse Network` button and ensure Finder OPTA device appears under the Gateway, then press `OK`.
+Press the `Scan Network` button and ensure Finder OPTA device appears under the Gateway, then press `OK`.
 
 ![Scan Network](assets/en/05-scan-network.png)
 
@@ -128,7 +128,7 @@ manual](https://cdn.findernet.com/app/uploads/Modbus_RS485_6MTx.pdf), the freque
 - Error handling: `Keep last value`.
 
 The Finder 6M series technical manual counts addresses starting from `1` while CODESYS starts from `0`. For this reason, to access
-Input Register `40085`, we set the address to `84`.
+Input Register `40085`, we set the offset to `84`.
 
 ![Add Channel](assets/en/14-add-channel.png)
 

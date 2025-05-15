@@ -45,7 +45,7 @@ previsti sono:
 Possiamo impostare questi valori **posizionando entrambi gli switch DIP del Finder serie 6M alla posizione `UP`**, come mostrato
 nella figura qui sotto.
 
-![Finder 6M series diagram](assets/6m-diagram.svg)
+![Finder 6M series diagram](assets/6M-diagram.svg)
 
 ## Istruzioni
 
