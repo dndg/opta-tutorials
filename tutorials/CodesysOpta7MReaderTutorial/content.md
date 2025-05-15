@@ -1,4 +1,4 @@
-# Reading a Finder 7M Series via Modbus RTU with Finder OPTA in CODESYS
+# Reading a Finder 7M series via Modbus RTU with Finder OPTA in CODESYS
 
 ## Overview
 
