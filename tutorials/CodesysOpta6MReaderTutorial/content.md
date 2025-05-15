@@ -1,4 +1,4 @@
-# Reading a Finder 6M Series via Modbus RTU with Finder OPTA in CODESYS
+# Reading a Finder 6M series via Modbus RTU with Finder OPTA in CODESYS
 
 ## Overview
 
@@ -6,7 +6,8 @@ Finder OPTA is equipped with an RS-485 port that allows communication with devic
 
 ## Goals
 
-- Configure Finder OPTA via Ethernet to read registers from a Finder 6M series in CODESYS
+- Configure Finder OPTA via Ethernet to read registers from a Finder 6M series
+  in CODESYS
 - Read registers from a Finder 6M series via Modbus RTU in CODESYS
 
 ## Requirements
@@ -14,7 +15,8 @@ Finder OPTA is equipped with an RS-485 port that allows communication with devic
 Before you begin, make sure you have:
 
 - [PLC Finder OPTA CODESYS](https://opta.findernet.com/en/codesys) (x1)
-- [12W or 25W switching power supply for OPTA](https://opta.findernet.com/en/codesys#moduli-espansione)(1x)
+- [12W or 25W switching power supply for
+  OPTA](https://opta.findernet.com/en/codesys#moduli-espansione)(1x)
 - Finder 6M series power analyzer (x1)
   - [6M.TA.9.024.1200](https://www.findernet.com/en/worldwide/series/serie-6m-analizzatori-di-rete/type/tipo-6mta-analizzatore-di-rete-monofase/)
   - [6M.TB.9.024.1200](https://www.findernet.com/en/worldwide/series/serie-6m-analizzatori-di-rete/type/tipo-6mtb-analizzatore-di-rete-monofase/)
@@ -23,25 +25,31 @@ Before you begin, make sure you have:
 - Wire with either specification for RS-485 connection (x2):
   - STP/UTP 24-18AWG (Unterminated) 100-130Ω rated
   - STP/UTP 22-16AWG (Terminated) 100-130Ω rated
-- CODESYS development environment installed with OPTA Configurator plug-in. You can find an installation guide [at this
+- CODESYS development environment installed with OPTA Configurator plug-in. You
+  can find an installation guide [at this
   link](https://opta.findernet.com/en/tutorial/codesys-plugin-tutorial).
-- Properly configured network: the PC must communicate correctly with Finder OPTA via Ethernet. Configuration guide is available [at
-  this link](https://opta.findernet.com/en/tutorial/codesys-via-ethernet).
+- Properly configured network: the PC must communicate correctly with Finder
+  OPTA via Ethernet. Configuration guide is available [at this
+  link](https://opta.findernet.com/en/tutorial/codesys-via-ethernet).
 
-To follow this tutorial, you will need to connect the Finder 6M series power analyzer to the power supply and provide a suitable
-load. You will also need to power Finder OPTA with a 12-24VDC/500mA power supply and properly configure the RS-485 serial
-connection. The diagram below shows the correct configuration of the connections between Finder OPTA and the Finder 6M series.
+To follow this tutorial, you will need to connect the Finder 6M series power
+analyzer to the power supply and provide a suitable load. You will also need to
+power Finder OPTA with a 12-24VDC/500mA power supply and properly configure the
+RS-485 serial connection. The diagram below shows the correct configuration of
+the connections between Finder OPTA and the Finder 6M series.
 
 ![Connecting Opta and Finder 6M](assets/connection.svg)
 
-The Modbus configuration of the Finder 6M series is determined by the position of the DIP switches, as indicated on page 6 of the
-[user manual](https://cdn.findernet.com/app/uploads/6M.Tx-User-Guide.pdf). In this tutorial the expected communication parameters
-are:
+The Modbus configuration of the Finder 6M series is determined by the position
+of the DIP switches, as indicated on page 6 of the [user
+manual](https://cdn.findernet.com/app/uploads/6M.Tx-User-Guide.pdf). In this
+tutorial the expected communication parameters are:
 
 - Modbus address: `1`.
 - Baudrate: `38400`.
 
-We can set these values **by setting both DIP switches of the Finder 6M series to the `UP` position**, as shown in the figure below.
+We can set these values **by setting both DIP switches of the Finder 6M series
+to the `UP` position**, as shown in the figure below.
 
 ![Finder 6M series diagram](assets/6M-diagram.svg)
 
@@ -57,34 +65,38 @@ Create a new project and choose `Standard Project`.
 
 ![New project](assets/en/02-new-project.png)
 
-Make sure the device is `Finder Opta`, then select the programming language (we will use ST).
+Make sure the device is `Finder Opta`, then select the programming language (we
+will use ST).
 
 ![Standard project](assets/en/03-standard-project.png)
 
 ### Identifying Finder OPTA via Ethernet
 
-Now double-click on the `Device (Finder Opta)` entry in the `Devices` menu, a tab will open as shown below.
+Now double-click on the `Device (Finder Opta)` entry in the `Devices` menu, a
+tab will open as shown below.
 
 ![Device](assets/en/04-device.png)
 
-Press the `Scan Network` button and ensure Finder OPTA device appears under the Gateway, then press `OK`.
+Press the `Scan Network` button and ensure Finder OPTA device appears under the
+Gateway, then press `OK`.
 
 ![Scan Network](assets/en/05-scan-network.png)
 
 ### Modbus Configuration
 
-At this stage, we configure the RS-485 port and Modbus protocol parameters to ensure Finder OPTA can communicate with the Finder 6M
-series.
+At this stage, we configure the RS-485 port and Modbus protocol parameters to
+ensure Finder OPTA can communicate with the Finder 6M series.
 
 Right-click on `Device (Finder Opta)` and select `Add device...`.
 
 ![Device Menu](assets/en/06-device-menu.png)
 
-From the list select `Modbus COM Port` and click `Add device`.
+Now configure the Modbus RTU protocol on the RS-485 port of Finder OPTA. From
+the list select `Modbus COM Port` and click `Add device`.
 
 ![Add Modbus COM port](assets/en/07-add-modbus-com-port.png)
 
-Now set the serial port values:
+Now set the serial port configuration values as follows:
 
 - COM port: `2`, i.e., the RS-485 port of Finder OPTA.
 - Baud rate: `38400`.
@@ -94,30 +106,40 @@ Now set the serial port values:
 
 ![Set Modbus COM port](assets/en/08-set-modbus-com-port.png)
 
-After setting the serial port values, right-click on `Modbus_COM_Port(Modbus COM Port)` and then on `Add device`.
+After setting the serial port values, right-click on `Modbus_COM_Port(Modbus COM
+Port)` and then on `Add device`.
 
 ![Modbus COM port menu](assets/en/09-modbus-com-port-menu.png)
 
-From the list select `Modbus Client, COM Port` and click `Add device`.
+From the list select `Modbus Client, COM Port` and click `Add device`. In this
+way you add a Modbus client communicating on the previously configured serial
+port, i.e. the Finder 6M series.
 
 ![Add Modbus client](assets/en/10-add-modbus-client.png)
 
-Then right-click on the newly added item `Modbus_Client_COM_Port(Modbus Client, COM Port)` and click `Add device`.
+Then right-click on the newly added item `Modbus_Client_COM_Port(Modbus Client,
+COM Port)` and click `Add device`.
 
 ![Modbus client menu](assets/en/11-modbus-client-port-menu.png)
 
-Select `Modbus Server, COM port`, then `Add device`.
+Select `Modbus Server, COM port`, then `Add device` to specify that the Finder
+6M serie will act as server, while the Finder OPTA will act as client.
 
 ![Add Server Modbus](assets/en/12-add-server-modbus.png)
 
-Now click on the newly added item and make sure the `Server address` is set to `1`.
+Now click on the newly added item and make sure the `Server address` is set to
+`1`, the Modbus address of the Finder 6M series.
 
 ![Set Server Modbus](assets/en/13-set-server-modbus.png)
 
-In the same screen click on `Modbus Server Channel` then on `Add channel` at the bottom right. In this tutorial we read the
-frequency value from the Finder 6M series. As defined in the [device technical
-manual](https://cdn.findernet.com/app/uploads/Modbus_RS485_6MTx.pdf), the frequency value is stored in Input Registers `40085` and
-`40086` in `float` format. Therefore, set the channel values as follows:
+Finally, we configure a Modbus server channel, meaning we set the parameters
+that will be used by the program to read from the Finder 6M series. In the same
+screen click on `Modbus Server Channel` then on `Add channel` at the bottom
+right. In this tutorial we read the frequency value from the Finder 6M series.
+As defined in the [device technical
+manual](https://cdn.findernet.com/app/uploads/Modbus_RS485_6MTx.pdf), the
+frequency value is stored in Input Registers `40085` and `40086` in `float`
+format. Therefore, set the channel values as follows:
 
 - Name: `Frequency`.
 - Access type: `Read Input Registers (Function code 4)`.
@@ -127,8 +149,9 @@ manual](https://cdn.findernet.com/app/uploads/Modbus_RS485_6MTx.pdf), the freque
 - Length: `2`.
 - Error handling: `Keep last value`.
 
-The Finder 6M series technical manual counts addresses starting from `1` while CODESYS starts from `0`. For this reason, to access
-Input Register `40085`, we set the offset to `84`.
+The Finder 6M series technical manual counts addresses starting from `1` while
+CODESYS starts from `0`. For this reason, to access Input Register `40085`, we
+set the offset to `84`.
 
 ![Add Channel](assets/en/14-add-channel.png)
 
@@ -140,15 +163,17 @@ After pressing `OK`, you will see the summary of the newly configured channel.
 
 Now we write the ST program that reads the frequency value.
 
-This program directly accesses the variable's memory address and interprets the content as a `float` value. This step is essential
-to obtain the actual measurement stored in the device and transform it into a readable and usable format. In CODESYS, the `float`
-format is denoted as `REAL`.
+This program directly accesses the variable's memory address and interprets the
+content as a `float` value. This step is essential to obtain the actual
+measurement stored in the device and transform it into a readable and usable
+format. In CODESYS, the `float` format is denoted as `REAL`.
 
 In the sidebar, click on `PLC_PRG (PRG)`.
 
 ![PLC PRG](assets/en/16-plc-prg.png)
 
-At the top of the editor insert the following code:
+At the top of the editor - section dedicated to variables declaration - insert
+the following code:
 
 ```st
 PROGRAM PLC_PRG
@@ -161,7 +186,8 @@ END_VAR
 
 ![Program Variables](assets/en/17-program-variables.png)
 
-At the bottom of the editor insert the following code:
+At the bottom of the editor - section dedicated to program logic - insert the
+following code:
 
 ```st
 // Interpret as float
@@ -171,46 +197,56 @@ frequency := ptr^;
 
 ![Program Code](assets/en/18-program-code.png)
 
-Now it is necessary to associate the program variables with the Modbus channel, so that the variables contain the values read from
-the channel.
+Now it is necessary to associate the program variables with the Modbus channel,
+so that the variables contain the values read from the channel.
 
-In the sidebar, double-click on `Server_Modbus_COM_port`. Now click on the section `ModbusGenericSerialServer mapping I/O` and in
-the table double-click the `Variable` cell to display the option button.
+In the sidebar, double-click on `Server_Modbus_COM_port`. Now click on the
+section `ModbusGenericSerialServer mapping I/O` and in the table double-click
+the `Variable` cell to display the option button.
 
 ![Add mapping](assets/en/19-add-mapping.png)
 
-Click the options button to display the list of variables, expand `Application` and then `PLC_PRG`. Now click on the `words`
-variable and press `OK` to assign it to the `Frequency` channel.
+Click the options button to display the list of variables, expand `Application`
+and then `PLC_PRG` to access the variables previously defined in the ST program.
+Now click on the `words` variable and press `OK` to assign it to the `Frequency`
+channel.
 
 ![Variable association](assets/en/20-variable-association.png)
 
-The summary shows the variable assigned to the `Frequency` channel.
+The summary shows the variable assigned to the `Frequency` channel. From now on,
+the variable `words` contains the bytes read from the registers of the Finder 6M
+series, representing the frequency value measured by the device. It's our ST
+program that transforms these bytes in `float`.
 
 ![Variable Summary](assets/en/21-variable-summary.png)
 
 ### Uploading the Program to Finder OPTA
 
-At this stage, CODESYS downloads the program and configuration to the device. This step is crucial to properly update the device
-configuration, especially if Finder OPTA still contains an outdated configuration.
+At this stage, we download the program and the hardware configuration to Finder
+OPTA, so that it executes the code we just wrote, returning the frequency value
+read by the Finder 6M series.
 
-Now you can upload the program and configuration to the device by pressing the green button at the top labeled `Login`.
+Download the program and configuration to the device by pressing the green
+button at the top labeled `Login`.
 
 ![Login](assets/en/22-login.png)
 
-The program is uploaded to Finder OPTA, to start it press the `Start` button.
+Once the download is over, the program will be downloaded on Finder OPTA.
+Execute it by pressing the `Start` button.
 
 ![Start](assets/en/23-start.png)
 
-The `PLC_PRG` tab displays the frequency value in real time, stored in the `frequency` variable, in this case `49.94 Hz`.
+The `PLC_PRG` tab displays the frequency value in real time, stored in the
+`frequency` variable, in this case `49.94 Hz`.
 
 ![Working](assets/en/24-working.png)
 
 ## Conclusions
 
-By following these steps, you have performed a Modbus RTU read from the registers of a Finder 6M series using Finder OPTA in
-CODESYS.
+By following these steps, you have performed a Modbus RTU read from the
+registers of a Finder 6M series using Finder OPTA in CODESYS.
 
-If you encounter issues, verify that the devices are wired correctly and that the Modbus parameters are configured as specified in
-the tutorial.
+If you encounter issues, verify that the devices are wired correctly and that
+the Modbus parameters are configured as specified in the tutorial.
 
 <!-- Insert contact information for support -->
