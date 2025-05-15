@@ -79,11 +79,12 @@ Premi il tasto destro sulla voce `Device (Finder Opta)` e seleziona `Aggiungi di
 
 ![Device Menu](assets/it/06-device-menu.png)
 
-Dalla lista seleziona `Modbus COM Port` e fai click su `Aggiungi dispositivo`.
+Adesso configura il protocollo Modbus RTU sulla porta RS-485 di Finder OPTA.
+Seleziona `Modbus COM Port` e fai click su `Aggiungi dispositivo`.
 
 ![Add Modbus COM port](assets/it/07-add-modbus-com-port.png)
 
-Adesso imposta i valori della porta seriale:
+Imposta i valori di configurazione della porta seriale come segue:
 
 - Porta COM: `2`, ovvero la porta RS-485 del Finder OPTA.
 - Velocità in baud: `38400`.
@@ -98,27 +99,38 @@ dispositivo`.
 
 ![Modbus COM port menu](assets/it/09-modbus-com-port-menu.png)
 
-Dalla lista seleziona `Modbus Client, COM Port` e fai `Aggiungi dispositivo`.
+Dalla lista seleziona `Modbus Client, COM Port` e fai `Aggiungi dispositivo`. In
+questo modo aggiungi un client Modbus che comunica sulla porta seriale
+precedentemente configurata, ovvero il Finder serie 7M.
 
 ![Add Modbus client](assets/it/10-add-modbus-client.png)
 
-Poi premi il tasto destro sull'elemento appena aggiunto nel menu laterale `Modbus_Client_COM_Port(Modbus Client, COM Port)` e fai
-`Aggiungi dispositivo`.
+Ora premi il tasto destro sull'elemento appena aggiunto nel menu laterale
+`Modbus_Client_COM_Port(Modbus Client, COM Port)` e fai `Aggiungi
+dispositivo...`.
 
 ![Modbus client menu](assets/it/11-modbus-client-port-menu.png)
 
-Seleziona `Server Modbus, porta COM`, poi `Aggiungi dispositivo`.
+Seleziona `Server Modbus, porta COM`, poi `Aggiungi dispositivo` per
+specificare che il Finder serie 7M si comporterà da server, mentre il Finder
+OPTA si comporterà da client.
 
 ![Add Server Modbus](assets/it/12-add-server-modbus.png)
 
-A questo punto clicca sull'elemento appena aggiunto nel menu laterale e assicurati che `Indirizzo del server` sia `1`.
+A questo punto clicca sull'elemento appena aggiunto nel menu laterale e
+assicurati che `Indirizzo del server` sia `1`, ovvero l'indirizzo Modbus del
+Finder serie 7M.
 
 ![Set Server Modbus](assets/it/13-set-server-modbus.png)
 
-Nella stessa schermata clicca su `Canale del server Modbus` poi su `Aggiungi canale` in basso a destra. In questo tutorial leggiamo
-il valore della frequenza del Finder serie 7M. Come definito nel [manuale tecnico del
-dispositivo](https://cdn.findernet.com/app/uploads/2021/09/20090052/Modbus-7M24-7M38_v2_30062021.pdf), il valore di frequenza è
-contenuto negli Input Register `32498` e `32499` in formato `float`. Pertanto, imposta i valori del canale come segue:
+Ora non ci resta che configurare un canale del server Modbus, ovvero impostare
+dei parametri che il programma utilizzerà per effettuare la lettura dal Finder
+serie 7M. Nella stessa schermata clicca su `Canale del server Modbus` poi su
+`Aggiungi canale` in basso a destra. In questo tutorial leggiamo il valore
+della frequenza del Finder serie 7M. Come definito nel [manuale tecnico del
+dispositivo](https://cdn.findernet.com/app/uploads/2021/09/20090052/Modbus-7M24-7M38_v2_30062021.pdf),
+il valore di frequenza è contenuto negli Input Register `32498` e `32499` in
+formato `float`. Pertanto, imposta i valori del canale come segue:
 
 - Nome: `Frequenza`.
 - Tipo di accesso: `Read Input Registers (Codice funzione 4)`.
@@ -149,7 +161,8 @@ Nel menu laterale, clicca su `PLC_PRG (PRG)`.
 
 ![PLC PRG](assets/it/16-plc-prg.png)
 
-Nella parte superiore dell'editor inserisci il seguente codice:
+Nella parte superiore dell'editor - dedicata alla definizione delle variabili -
+inserisci il seguente codice:
 
 ```st
 PROGRAM PLC_PRG
@@ -163,7 +176,8 @@ END_VAR
 
 ![Program Variables](assets/it/17-program-variables.png)
 
-Nella parte inferiore dell'editor inserisci il seguente codice:
+Nella parte inferiore dell'editor - dedicata alla logica del programma -
+inserisci il seguente codice:
 
 ```st
 // Flip endianness
@@ -184,26 +198,33 @@ e nella tabella clicca due volte sulla cella `Variabile` per far comparire il pu
 
 ![Add mapping](assets/it/19-add-mapping.png)
 
-Clicca sul pulsante opzioni per far comparire la lista di variabili, espandi la voce `Application` e la voce `PLC_PRG`. A questo
-punto clicca sulla variabile `words` e premi `OK` per assegnarla al canale `Frequenza`.
+Clicca sul pulsante opzioni per far comparire la lista di variabili, espandi la
+voce `Application` e la voce `PLC_PRG` per visualizzare le variabili
+precedentemente definite all'interno del programma ST. A questo punto clicca
+sulla variabile `words` e premi `OK` per assegnarla al canale `Frequenza`.
 
 ![Variable association](assets/it/20-variable-association.png)
 
-Il riepilogo mostra la variabile assegnata al canale `Frequenza`.
+Il riepilogo mostra la variabile assegnata al canale `Frequenza`. Da ora in
+poi, la variabile `words` contiene i byte letti dai registri del Finder serie
+7M, rappresentati il valore di frequenza misurato. È il nostro programma ST a
+trasformare questi byte in un valore `float`.
 
 ![Variable Summary](assets/it/21-variable-summary.png)
 
 ### Caricamento del programma su Finder OPTA
 
-In questa fase, CODESYS scarica il programma e la configurazione sul dispositivo. Questo passaggio è fondamentale per aggiornare
-correttamente la configurazione del dispositivo, soprattutto se il Finder OPTA contiene ancora una configurazione obsoleta.
+In questa fase, scarichiamo il programma e la configurazione hardware su Finder
+OPTA, così che esegua il codice appena scritto e restituisca il valore di
+frequenza letto dal Finder serie 7M.
 
-Adesso è possibile caricare il programma e la configurazione sul dispositivo premendo il pulsante verde in alto etichettato come
-`Login`.
+Scarica il programma e la configurazione sul dispositivo premendo il pulsante
+verde in alto etichettato come `Login`.
 
 ![Login](assets/it/22-login.png)
 
-Il programma viene caricato su Finder OPTA, per farlo partire premi il pulsante `Start`.
+Terminato lo scaricamento, il programma è scaricato su Finder OPTA. Fallo
+partire premendo il pulsante `Start`.
 
 ![Start](assets/it/23-start.png)
 

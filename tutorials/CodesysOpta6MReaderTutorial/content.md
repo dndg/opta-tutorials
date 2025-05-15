@@ -207,9 +207,9 @@ the `Variable` cell to display the option button.
 ![Add mapping](assets/en/19-add-mapping.png)
 
 Click the options button to display the list of variables, expand `Application`
-and then `PLC_PRG` to access the variables previously defined in the ST program.
-Now click on the `words` variable and press `OK` to assign it to the `Frequency`
-channel.
+and then `PLC_PRG` to access the variables previously defined in the ST
+program. Now click on the `words` variable and press `OK` to assign it to the
+`Frequency` channel.
 
 ![Variable association](assets/en/20-variable-association.png)
 
