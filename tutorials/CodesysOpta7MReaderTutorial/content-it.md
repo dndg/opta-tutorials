@@ -19,6 +19,9 @@ Prima di iniziare, assicurati di avere:
   - [7M.24.8230.0210](https://www.findernet.com/it/italia/series/serie-7m-contatori-di-energia/type/tipo-7m-24-contatore-di-energia-monofase-bidirezionale-con-display-lcd/)
   - [7M.38.8400.0212](https://www.findernet.com/it/italia/series/serie-7m-contatori-di-energia/type/tipo-7m-38-contatori-di-energia-multifunzione-bidirezionale-80-a/)
 - Cavo Ethernet (x1)
+- Cavo per la connettività RS-485 con una delle seguenti specifiche (x2):
+  - STP/UTP 24-18AWG (non terminato) con resistenza di 100-130Ω
+  - STP/UTP 22-16AWG (terminato) con resistenza di 100-130Ω
 - Ambiente di sviluppo CODESYS installato con plug-in OPTA Configurator. Trovi una guida all'installazione [a questo
   link](https://opta.findernet.com/it/tutorial/codesys-plugin-tutorial).
 - Rete configurata correttamente: il PC deve comunicare correttamente con Finder OPTA tramite Ethernet. Trovi una guida alla
