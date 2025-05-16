@@ -157,7 +157,7 @@ In the side menu, click on `PLC_PRG (PRG)`.
 At the top of the editor - section dedicated to variables declaration - insert
 the following code:
 
-```st
+```pascal
 PROGRAM PLC_PRG
 VAR
     words: ARRAY[0..1] OF WORD;
@@ -172,7 +172,7 @@ END_VAR
 At the bottom of the editor - section dedicated to program logic - insert the
 following code:
 
-```st
+```pascal
 // Flip endianness
 frequency_w[0] := words[1];
 frequency_w[1] := words[0];
