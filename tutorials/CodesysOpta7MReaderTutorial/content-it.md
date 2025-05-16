@@ -1,5 +1,7 @@
 # Leggere un Finder serie 7M via Modbus RTU con Finder OPTA in CODESYS
 
+Scopri come configurare Finder OPTA in CODESYS per leggere i dati da un dispositivo Finder serie 7M tramite Modbus RTU.
+
 ## Panoramica
 
 Finder OPTA è dotato di una porta RS-485 che consente la comunicazione con dispositivi compatibili con il protocollo Modbus RTU, come i Finder serie 7M. In questo tutorial mostreremo, passo dopo passo, come configurare Finder OPTA in CODESYS per leggere correttamente i dati da un contatore Finder serie 7M.
