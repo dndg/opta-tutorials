@@ -1,8 +1,12 @@
 # Programming Finder OPTA via Ethernet in CODESYS
 
+Set up and program Finder OPTA via Ethernet in CODESYS.
+
 ## Overview
 
-This tutorial provides a step-by-step guide to programming Finder OPTA via Ethernet using CODESYS.
+In this tutorial, you’ll learn how to program your Finder OPTA over Ethernet using CODESYS. We’ll walk through setting up your PC’s
+network, connecting to Finder OPTA, creating a simple ST program to control the LEDs, and uploading it to the device. By the end,
+you’ll have a working setup and see your code running on Finder OPTA.
 
 ## Goals
 

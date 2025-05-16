@@ -1,8 +1,12 @@
 # Changing Finder OPTA IP Address in CODESYS
 
+Learn how to change the IP address of Finder OPTA in CODESYS.
+
 ## Overview
 
-This tutorial provides a step-by-step guide to change the IP address of Finder OPTA in CODESYS.
+In this tutorial, you'll learn how to change the IP address of Finder OPTA using CODESYS. We’ll walk you through verifying the
+current IP, configuring the Ethernet settings, and applying the new address to the device. By the end, you’ll have successfully
+updated Finder OPTA’s IP and confirmed it's reachable on your network.
 
 ## Goals
 

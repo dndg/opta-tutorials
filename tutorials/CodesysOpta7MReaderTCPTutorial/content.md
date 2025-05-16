@@ -1,8 +1,12 @@
 # Reading a Finder 7M series via Modbus TCP using Finder OPTA as Modbus gateway in CODESYS
 
+Learn how to implement a Modbus TCP server on Finder OPTA in CODESYS to expose data read from a Finder 7M series via Modbus RTU.
+
 ## Overview
 
-As shown in previous tutorials, Finder OPTA is equipped with an RS-485 port that allows communication with devices compatible with the Modbus RTU protocol, such as the Finder 7M series. In this tutorial, we will show how to implement a Modbus TCP server with Finder OPTA in CODESYS to expose to a client the values read from a Finder 7M series via Modbus RTU.
+As shown in previous tutorials, Finder OPTA is equipped with an RS-485 port that allows communication with devices compatible with
+the Modbus RTU protocol, such as the Finder 7M series. In this tutorial, we will show how to implement a Modbus TCP server with
+Finder OPTA in CODESYS to expose to a client the values read from a Finder 7M series via Modbus RTU.
 
 ## Goals
 

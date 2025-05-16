@@ -1,5 +1,7 @@
 # Reading a Finder 6M series via Modbus RTU with Finder OPTA in CODESYS
 
+Learn how to configure Finder OPTA in CODESYS to read data from a Finder 6M series via Modbus RTU.
+
 ## Overview
 
 Finder OPTA is equipped with an RS-485 port that allows communication with devices compatible with the Modbus RTU protocol, such as the Finder 6M series. In this tutorial, we will show step-by-step how to configure Finder OPTA in CODESYS to correctly read data from a Finder 6M series power analyzer.
