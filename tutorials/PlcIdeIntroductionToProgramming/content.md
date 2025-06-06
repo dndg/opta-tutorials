@@ -21,10 +21,10 @@ If you have not yet activated the license for the Finder OPTA device, follow
 complete the activation.
 
 This tutorial assumes you are already familiar with some basic concepts covered
-in the guide “First Steps with Finder OPTA and PLC IDE”<!-- add link -->.
-If you have not yet consulted it, we recommend doing so before proceeding: it
-will provide the necessary foundation to better understand the steps described
-below.
+in the guide “[First Steps with Finder OPTA and PLC
+IDE](https://opta.findernet.com/en/tutorial/plc-first-steps)”. If you have not
+yet consulted it, we recommend doing so before proceeding: it will provide the
+necessary foundation to better understand the steps described below.
 
 ## The IEC-61131-3 Standard
 
@@ -52,7 +52,8 @@ variables that we will use to implement the counter.
 
 In this tutorial, we will use global variables so that we don't have to
 recreate them for each language. If you want to learn more about global and
-local variables, follow this guide<!-- add link -->.
+local variables, follow [this
+guide](https://opta.findernet.com/en/tutorial/plc-first-steps).
 
 For the counter function, we will use two variables: one to serve as the
 counter that accumulates the count value, and the other to serve as a constant
@@ -181,13 +182,13 @@ New Program*.
 
 Set the language to *IL* and assign the program to the *Fast* task type to
 increase the program’s execution frequency. If you want to know more about how
-tasks work, follow the guide “First Steps with Finder OPTA and PLC IDE”<!-- add
-link -->.
+tasks work, follow the guide “[First Steps with Finder OPTA and PLC
+IDE](https://opta.findernet.com/en/tutorial/plc-first-steps)”.
 
 ![IL Program](assets/it/16-il-program.png)
 
-Copy the code and insert it into the *main_IL* entry in the tree menu under the
-*Project* section.
+Copy the previous code and insert it into the *main_IL* entry in the tree menu
+under the *Project* section.
 
 ![IL Code](assets/it/17-il-code.png)
 
@@ -494,7 +495,7 @@ monitoring.
 Copy the code below and paste it into the *Sketch* page under the *Resources*
 section.
 
-```cpp
+```arduino
 const int addition_cpp = 1;
 
 void setup()

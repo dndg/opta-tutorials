@@ -1,4 +1,4 @@
-#  Primi passi con Finder OPTA e PLC IDE
+# Primi passi con Finder OPTA e PLC IDE
 
 Guida per l'utilizzo di Finder OPTA con Arduino PLC IDE.
 

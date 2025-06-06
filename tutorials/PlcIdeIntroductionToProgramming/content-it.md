@@ -22,10 +22,11 @@ Se non hai ancora attivato la licenza per il dispositivo Finder OPTA, segui
 per completare l'attivazione.
 
 In questo tutorial si presume che tu abbia già familiarità con alcuni concetti
-di base, trattati nella guida “Primi passi con Finder OPTA e PLC IDE”<!-- add
-link -->. Se non l’hai ancora consultata, ti consigliamo di seguirla prima di
-procedere: ti fornirà le fondamenta necessarie per comprendere al meglio i
-passaggi descritti in seguito.
+di base, trattati nella guida “[Primi passi con Finder OPTA e PLC
+IDE](https://opta.findernet.com/it/tutorial/plc-first-steps)”. Se non l’hai
+ancora consultata, ti consigliamo di seguirla prima di procedere: ti fornirà le
+fondamenta necessarie per comprendere al meglio i passaggi descritti in
+seguito.
 
 ## Lo standard IEC-61131-3
 
@@ -53,7 +54,8 @@ creare delle variabili che ci serviranno per implementare il contatore.
 
 In questo tutorial useremo delle variabili globali in modo da non doverle
 ricreare per ogni linguaggio. Se vuoi saperne di più sulle variabili globali e
-locali segui questa guida<!-- add link -->.
+locali segui [questa
+guida](https://opta.findernet.com/it/tutorial/plc-first-steps).
 
 Per la funzione di contatore useremo due variabili, una viene usata come
 contatore che accumula il valore di conteggio, l'altra viene usata come
@@ -90,7 +92,8 @@ sinistra.
 
 Per monitorare la variabile di conteggio e capire se il suo valore sta
 incrementando, dobbiamo preparare il Watch. Se vuoi avere più informazioni su
-questo strumento segui questa guida<!-- add link -->.
+questo strumento segui [questa
+guida](https://opta.findernet.com/it/tutorial/plc-first-steps).
 
 Mostra la sezione del Watch selezionando *Vista > Finestre Strumenti > Watch*.  
 
@@ -191,8 +194,8 @@ funzionamento dei task segui questa guida<!-- add link -->.
 
 ![IL Program](assets/it/16-il-program.png)
 
-Copia il codice ed inseriscilo nella voce *main_IL* del menu ad albero nella
-sezione *Progetto*.
+Copia il codice mostrato in precedenza ed inseriscilo nella voce *main_IL* del
+menu ad albero nella sezione *Progetto*.
 
 ![IL Code](assets/it/17-il-code.png)
 
@@ -505,7 +508,7 @@ monitoraggio.
 Copia il codice che trovi in seguito e incollalo nella pagina di *Sketch*
 all'interno della sezione *Risorse*.
 
-```cpp
+```arduino
 const int addition_cpp = 1;
 
 void setup()
