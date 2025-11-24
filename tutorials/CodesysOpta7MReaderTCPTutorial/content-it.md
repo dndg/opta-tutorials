@@ -22,12 +22,12 @@ Prima di iniziare, assicurati di avere:
 - [Alimentatore switching 12W o 25W per
   OPTA](https://opta.findernet.com/it/codesys#moduli-espansione)(1x)
 - Finder serie 7M con Modbus RTU (x1)
-  - [7M.24.8230.0210](https://www.findernet.com/it/italia/series/serie-7m-contatori-di-energia/type/tipo-7m-24-contatore-di-energia-monofase-bidirezionale-con-display-lcd/)
-  - [7M.38.8400.0212](https://www.findernet.com/it/italia/series/serie-7m-contatori-di-energia/type/tipo-7m-38-contatori-di-energia-multifunzione-bidirezionale-80-a/)
+    - [7M.24.8230.0210](https://www.findernet.com/it/italia/series/serie-7m-contatori-di-energia/type/tipo-7m-24-contatore-di-energia-monofase-bidirezionale-con-display-lcd/)
+    - [7M.38.8400.0212](https://www.findernet.com/it/italia/series/serie-7m-contatori-di-energia/type/tipo-7m-38-contatori-di-energia-multifunzione-bidirezionale-80-a/)
 - Cavo Ethernet (x1)
 - Cavo per la connettività RS-485 con una delle seguenti specifiche (x2):
-  - STP/UTP 24-18AWG (non terminato) con resistenza di 100-130Ω
-  - STP/UTP 22-16AWG (terminato) con resistenza di 100-130Ω
+    - STP/UTP 24-18AWG (non terminato) con resistenza di 100-130Ω
+    - STP/UTP 22-16AWG (terminato) con resistenza di 100-130Ω
 - Ambiente di sviluppo CODESYS installato con plug-in OPTA Configurator. Trovi
   una guida all'installazione [a questo
   link](https://opta.findernet.com/it/tutorial/codesys-plugin-tutorial).
@@ -127,9 +127,11 @@ Imposta i valori come segue:
 
 Tutti gli altri parametri possono essere lasciati al valore predefinito.
 
-Nota che l'indirizzo di partenza è impostato a `2` poichè i primi due indirizzi
-sono occupati dagli Holding Register. Inoltre, il configuratore di CODESYS
-conta gli indirizzi a partire da `0`.
+Il configuratore di CODESYS conta gli indirizzi a partire da `0`. Nel nostro
+tutorial abbiamo scelto di far partire gli Holding Register dall’indirizzo `0`
+e gli Input Register dall’indirizzo `2` solo per evitare confusione. In realtà
+gli Holding Register e gli Input Register appartengono a spazi di indirizzi
+distinti, quindi nulla vieta di farli partire entrambi da `0`.
 
 ![Set Ethernet Modbus](assets/it/10-set-ethernet-modbus.png)
 

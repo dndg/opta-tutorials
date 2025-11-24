@@ -10,8 +10,8 @@ Finder OPTA in CODESYS to expose to a client the values read from a Finder 7M se
 
 ## Goals
 
-- Configure the Ethernet port of Finder OPTA in CODESYS  
-- Set up a Modbus TCP server using Finder OPTA in CODESYS  
+- Configure the Ethernet port of Finder OPTA in CODESYS
+- Set up a Modbus TCP server using Finder OPTA in CODESYS
 - Expose values read via Modbus RTU to a Modbus TCP client
 
 ## Requirements
@@ -21,18 +21,18 @@ Before starting, make sure you have:
 - [Finder OPTA CODESYS PLC](https://opta.findernet.com/en/codesys) (x1)
 - [12W or 25W switching power supply for
   OPTA](https://opta.findernet.com/en/codesys#moduli-espansione) (1x)
-- Finder 7M series with Modbus RTU (x1)  
-  - [7M.24.8230.0210](https://www.findernet.com/en/worldwide/series/serie-7m-contatori-di-energia/type/tipo-7m-24-contatore-di-energia-monofase-bidirezionale-con-display-lcd/)  
-  - [7M.38.8400.0212](https://www.findernet.com/en/worldwide/series/serie-7m-contatori-di-energia/type/tipo-7m-38-contatori-di-energia-multifunzione-bidirezionale-80-a/)  
-- Ethernet cable (x1)  
+- Finder 7M series with Modbus RTU (x1)
+    - [7M.24.8230.0210](https://www.findernet.com/en/worldwide/series/serie-7m-contatori-di-energia/type/tipo-7m-24-contatore-di-energia-monofase-bidirezionale-con-display-lcd/)
+    - [7M.38.8400.0212](https://www.findernet.com/en/worldwide/series/serie-7m-contatori-di-energia/type/tipo-7m-38-contatori-di-energia-multifunzione-bidirezionale-80-a/)
+- Ethernet cable (x1)
 - Wire with either specification for RS-485 connection (x2):
-  - STP/UTP 24-18AWG (Unterminated) 100-130Ω rated
-  - STP/UTP 22-16AWG (Terminated) 100-130Ω rated
-- CODESYS development environment installed with the OPTA Configurator plug-in.  
+    - STP/UTP 24-18AWG (Unterminated) 100-130Ω rated
+    - STP/UTP 22-16AWG (Terminated) 100-130Ω rated
+- CODESYS development environment installed with the OPTA Configurator plug-in.
   You can find an installation guide [at this
-  link](https://opta.findernet.com/en/tutorial/codesys-plugin-tutorial).  
+  link](https://opta.findernet.com/en/tutorial/codesys-plugin-tutorial).
 - Properly configured network: your PC must be able to communicate with Finder
-  OPTA via Ethernet.  
+  OPTA via Ethernet.
   Configuration guide available
   [here](https://opta.findernet.com/en/tutorial/codesys-via-ethernet).
 - [QModBus](https://sourceforge.net/projects/qmodbus/) program installed and
@@ -50,14 +50,14 @@ Finder OPTA and the Finder 7M series.
 ## Instructions
 
 This tutorial is the second part of the guide dedicated to reading data from a
-Finder 7M series device using Modbus and Finder OPTA.  
+Finder 7M series device using Modbus and Finder OPTA.
 If you have already completed the first part, you can continue with this
 tutorial. Otherwise, we recommend following the guide available at this
 [link](https://opta.findernet.com/en/tutorial/serie7m-modbus-rtu) before
 proceeding.
 
 The guide shows how to use Finder OPTA as a Modbus gateway to make the values
-read from the meter via Modbus RTU available over Modbus TCP.  
+read from the meter via Modbus RTU available over Modbus TCP.
 This allows a client that supports the Modbus TCP protocol to access the
 measurements from a Finder 7M series.
 
@@ -86,7 +86,7 @@ connected device.
 
 ![Browse Ethernet](assets/en/05-browse-ethernet.png)
 
-Click `OK` to keep the network settings of Finder OPTA.  
+Click `OK` to keep the network settings of Finder OPTA.
 Before proceeding, make sure to check the `Adapt operating system settings`
 option and then click `Yes` to confirm the changes.
 
@@ -95,7 +95,7 @@ option and then click `Yes` to confirm the changes.
 ### Modbus TCP Server Configuration
 
 In this section, we configure a Modbus TCP server on Finder OPTA. This server
-will be reachable via Ethernet at the previously configured IP address.  
+will be reachable via Ethernet at the previously configured IP address.
 The Modbus TCP server replicates in its registers the frequency value read by
 Finder OPTA via Modbus RTU.
 
@@ -124,9 +124,10 @@ Set the values as follows:
 
 All other parameters can remain at their default values.
 
-Note that the starting address is set to `2` because the first two addresses
-are occupied by Holding Registers. Also, the CODESYS configurator starts
-counting addresses from `0`.
+The CODESYS configurator starts counting addresses from `0`. We chose to start
+the Holding Registers at address `0` and the Input Registers at address `2` in
+our tutorial solely to avoid confusion. In reality, Holding Registers and Input
+Registers belong to separate address spaces, so both can freely start at `0`.
 
 ![Set Ethernet Modbus](assets/en/10-set-ethernet-modbus.png)
 
@@ -140,7 +141,7 @@ the `Variable` cell in the table to bring up the options button.
 ![Frequency](assets/en/11-frequency.png)
 
 Click the options button to show the list of variables, expand `Application`,
-then `PLC_PRG`.  
+then `PLC_PRG`.
 Now click on the variable `frequency_w` and press `OK` to assign it to the
 Input Registers.
 
@@ -151,7 +152,7 @@ The summary now shows the variable assigned to the registers.
 ![Frequency Associated](assets/en/13-frequency-associated.png)
 
 After this step, the frequency value is replicated inside the Modbus TCP
-server’s Input Registers at the configured addresses.  
+server’s Input Registers at the configured addresses.
 A client will now be able to access the server registers to read the measured
 value from the meter.
 
@@ -175,7 +176,7 @@ Execute it by pressing the `Start` button.
 ![Start](assets/en/16-start.png)
 
 At this point, you’ll notice that in the cell of the highlighted row in the
-figure, the bytes related to the frequency value change.  
+figure, the bytes related to the frequency value change.
 These bytes represent the frequency measured by the Finder 7M device, expressed
 in `float` format after the conversion performed by the ST program.
 
