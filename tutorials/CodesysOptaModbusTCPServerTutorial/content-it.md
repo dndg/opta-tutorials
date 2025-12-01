@@ -1,8 +1,6 @@
-# Implementare un server Modbus TCP su Finder OPTA per esporre valori a un HMI
+# Come utilizzare un HMI con Finder OPTA via Modbus TCP
 
-Scopri come configurare Finder OPTA come server Modbus TCP in CODESYS,
-esponendo una variabile tramite un registro Modbus in modo che un HMI esterno
-possa leggerla e visualizzarla.
+Scopri come configurare Finder OPTA come server Modbus TCP in CODESYS, esponendo una variabile tramite un registro Modbus in modo che un HMI esterno possa leggerla e visualizzarla.
 
 ## Panoramica
 
