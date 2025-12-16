@@ -53,25 +53,25 @@ supports the Modbus TCP protocol can read and display the value.
 
 Open CODESYS.
 
-![Open CODESYS](assets/it/01-new-project.png)
+![Open CODESYS](assets/en/01-new-project.png)
 
 Create a new project and choose `Standard project`.
 
-![New Project](assets/it/02-standard-project.png)
+![New Project](assets/en/02-standard-project.png)
 
 Make sure the device is `Finder Opta`, then select the program language.
 
-![Standard Project](assets/it/03-finder-opta.png)
+![Standard Project](assets/en/03-finder-opta.png)
 
 ### Identifying Finder OPTA via Ethernet
 
 Double-click the `Device (Finder Opta)` entry in the `Devices` menu. A tab will open as shown below.
 
-![Device](assets/it/04-device.png)
+![Device](assets/en/04-device.png)
 
 Click the `Scan network` button and make sure you see the Finder OPTA device appear under the Gateway, then press `OK`.
 
-![Scan Network](assets/it/05-scan-network.png)
+![Scan Network](assets/en/05-scan-network.png)
 
 ### Preparing the ST program
 
@@ -80,7 +80,7 @@ end of each cycle, the counter value is copied into a variable that we will map 
 
 In the side menu, click on `PLC_PRG (PRG)`.
 
-![PLC PRG](assets/it/06-plc-prg.png)
+![PLC PRG](assets/en/06-plc-prg.png)
 
 In the upper part of the editor - dedicated to variable definitions - enter the following code:
 
@@ -105,7 +105,7 @@ END_IF
 mbCount := count;
 ```
 
-![PLC PRG ST code](assets/it/07-plc-prg-st-code.png)
+![PLC PRG ST code](assets/en/07-plc-prg-st-code.png)
 
 ### Ethernet port configuration
 
@@ -118,28 +118,28 @@ accessible.
 Let's start by adding the Ethernet adapter: right-click on the
 `Device (Finder OPTA)` item and choose `Add Device...`.
 
-![Add Ethernet](assets/it/08-add-ethernet.png)
+![Add Ethernet](assets/en/08-add-ethernet.png)
 
 From the menu, expand the `Ethernet Adapter` item, select `Ethernet`, and click
 `Add Device`.
 
-![Add Ethernet adapter](assets/it/09-add-ethernet-adapter.png)
+![Add Ethernet adapter](assets/en/09-add-ethernet-adapter.png)
 
 Now, double-click on the `Ethernet (Ethernet)` item in the side menu.
 
-![Network configuration](assets/it/10-network-config.png)
+![Network configuration](assets/en/10-network-config.png)
 
 At this point, read the network configuration from the Finder OPTA: clicking
 the `Browse...` button will open a window with the network parameters of the
 connected device.
 
-![Browse network](assets/it/11-browse-network.png)
+![Browse network](assets/en/11-browse-network.png)
 
 Press `OK` to keep the Finder OPTA network parameters. Before continuing,
 remember to check the `Adapt operating system settings` option and then click
 `Yes` to confirm the change.
 
-![Confirm popup](assets/it/12-confirm-popup.png)
+![Confirm popup](assets/en/12-confirm-popup.png)
 
 ### Modbus TCP Server configuration
 
@@ -154,7 +154,7 @@ configure a Modbus TCP server on the slave. From the menu, expand the `Modbus`
 item, then `ModbusTCP Slave Device`, click on `ModbusTCP Server Device` and
 `Add Device`.
 
-![Add server](assets/it/13-add-modbus-tcp-server.png)
+![Add server](assets/en/13-add-modbus-tcp-server.png)
 
 Now you can configure the registers of the Modbus server. Specifically, you need
 at least one Input Register to hold the counter value. Set the values as
@@ -179,24 +179,24 @@ protocol, Holding Registers and Input Registers belong to distinct address
 spaces, so there is nothing to prevent them from both starting at the same
 address.
 
-![Configure server](assets/it/14-configure-modbus-tcp-server.png)
+![Configure server](assets/en/14-configure-modbus-tcp-server.png)
 
 Now you need to associate the counter variable with the Input Register of the
 Modbus TCP server. Click on the `Modbus TCP Server Device I/O Mapping` section,
 and in the table expand the `Input registers` section, then double-click
 on the `Variable` cell to make the options button appear.
 
-![Variable mapping](assets/it/15-variable-mapping.png)
+![Variable mapping](assets/en/15-variable-mapping.png)
 
 Click the options button to bring up the list of variables, expand the
 `Application` item and the `PLC_PRG` item. At this point, click on the
 `mbCount` variable and press `OK` to assign it to the Input Register.
 
-![Variable mapping selector](assets/it/16-variable-mapping-selector.png)
+![Variable mapping selector](assets/en/16-variable-mapping-selector.png)
 
 The summary shows the variable assigned to the Input Register.
 
-![Variable mapped](assets/it/17-variable-mapped.png)
+![Variable mapped](assets/en/17-variable-mapped.png)
 
 After this step the counter value is replicated within the Input Register of
 the Modbus TCP server. A client will then be able to access the register to
@@ -210,12 +210,12 @@ Finder OPTA, so it can run the code we just wrote and return the counter value.
 Download the program and the configuration to the device by pressing the green
 button at the top labeled `Login`.
 
-![Login](assets/it/18-login.png)
+![Login](assets/en/18-login.png)
 
 Once the download is complete, the program is loaded onto the Finder OPTA. Run
 it by pressing the `Start` button.
 
-![Start](assets/it/19-start.png)
+![Start](assets/en/19-start.png)
 
 The `ModbusTCP_Server_Device` tab shows the real-time value of the counter
 written in the Input Register.
@@ -239,7 +239,7 @@ it into the main project screen.
 
 Double-click the panel icon and enter the network configuration.
 
-![Kinco network configuration](assets/it/20-kinco-network-configuration.png)
+![Kinco network configuration](assets/en/20-kinco-network-configuration.png)
 
 From the same screen, click on `System Param Settings` and add
 a device with manufacturer `Modbus` and protocol `Modbus TCP Slave
@@ -254,31 +254,31 @@ in CODESYS:
 Once the configuration is complete, the device will appear in the list with its
 own configuration.
 
-![Kinco Modbus TCP device](assets/it/21-kinco-modbus-tcp-device.png)
+![Kinco Modbus TCP device](assets/en/21-kinco-modbus-tcp-device.png)
 
 Close the configuration screen by clicking `Finish` and then `Ok`. At this
 point, you will see your HMI and the Modbus TCP server configured and connected.
 
-![Kinco devices](assets/it/22-kinco-devices.png)
+![Kinco devices](assets/en/22-kinco-devices.png)
 
 From the right-side panel expand the `HMI` > `Frames` section and double-click
 on `Frame0`. Select a `Number Component` element and drag it into the graphical
 elements grid.
 
-![Kinco button](assets/it/23-kinco-button.png)
+![Kinco button](assets/en/23-kinco-button.png)
 
 Double-click on the component you just created and configure it with the
 following parameters, which allow us to read an Input Register at address 1 of
 the Modbus TCP server and display its value inside the numeric component.
 
-![Kinco button configuration](assets/it/24-kinco-button-configuration.png)
+![Kinco button configuration](assets/en/24-kinco-button-configuration.png)
 
 Now all that is left is to confirm the configuration by clicking `OK`
 and then press the `Download` button to download the program to the panel.
 Make sure the network configuration is as shown in the figure, otherwise set it
 by clicking `Set`.
 
-![Kinco download](assets/it/25-kinco-download.png)
+![Kinco download](assets/en/25-kinco-download.png)
 
 Click `Download` and wait: when the program has been downloaded to the HMI,
 the panel will display the counter value read from the Finder OPTA.
@@ -292,22 +292,22 @@ Next, the devices screen will appear: click on `New device` and add the
 Modbus TCP server by setting the parameters as shown in the figure, according
 to what was configured in CODESYS.
 
-![Weintek Modbus TCP device](assets/it/26-weintek-modbus-tcp-device.png)
+![Weintek Modbus TCP device](assets/en/26-weintek-modbus-tcp-device.png)
 
 Click on the `Object` menu and add a `Numeric` component.
 
-![Weintek numeric component](assets/it/27-weintek-numeric-component.png)
+![Weintek numeric component](assets/en/27-weintek-numeric-component.png)
 
 Set the following configuration to read an Input Register at address
 1 of the Modbus TCP server and display its value inside the numeric
 component. Note that - unlike the Kinco HMI - the Weintek HMI always counts
 addresses starting from 0, so we will be reading the second `3x` address.
 
-![Weintek button configuration](assets/it/28-weintek-button-configuration.png)
+![Weintek button configuration](assets/en/28-weintek-button-configuration.png)
 
 Click `OK` and then click the center of the screen to place the component.
 
-![Weintek button](assets/it/29-weintek-button.png)
+![Weintek button](assets/en/29-weintek-button.png)
 
 Click on the `Project` menu and then on `Download (PC > HMI)`: at this point,
 you will need to enter the IP address of your HMI, which must be on the same
@@ -315,7 +315,7 @@ subnet as the Finder OPTA. The IP address of the Weintek HMI can be configured
 using the touch screen panel of the device, and in this case we set it to
 `10.0.0.252`, so enter the same IP in the download screen.
 
-![Weintek download](assets/it/30-weintek-download.png)
+![Weintek download](assets/en/30-weintek-download.png)
 
 Click `Download` and wait: once the program has been downloaded to the HMI,
 the panel will display the counter value read from the Finder OPTA.

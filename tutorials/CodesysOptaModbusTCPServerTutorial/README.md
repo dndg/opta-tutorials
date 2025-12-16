@@ -6,6 +6,5 @@ can read and display it.
 
 The tutorial is available in:
 
-<!--- [English](./content.md)-->
-
+- [English](./content.md)
 - [Italian](./content-it.md)
