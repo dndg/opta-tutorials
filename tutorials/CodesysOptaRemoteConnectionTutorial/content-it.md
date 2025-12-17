@@ -5,9 +5,11 @@ Scopri come collegarti remotamente a Finder OPTA utilizzando CODESYS.
 ## Panoramica
 
 CODESYS è in grado di rilevare automaticamente Finder OPTA quando il PC e il
-PLC si trovano sulla stessa rete locale. Questo meccanismo funziona bene all'interno delle reti LAN, ma non funziona quando il dispositivo si trova su una rete diversa.
+PLC si trovano sulla stessa rete locale. Questo meccanismo funziona bene
+all'interno delle reti LAN, ma non funziona quando il PC e il PLC si trovano su
+due reti differenti.
 
-Questa limitazione esiste perché CODESYS normalmente rileva i dispositivi
+Questa limitazione esiste perché CODESYS normalmente rileva
 Finder OPTA utilizzando messaggi broadcast UDP, che sono limitati alla rete
 locale e non vengono inoltrati dai router. Per superare questa limitazione, è
 possibile accedere a Finder OPTA utilizzando una connessione TCP diretta, a
@@ -86,7 +88,7 @@ CODESYS.
 ## Conclusioni
 
 L'utilizzo di una connessione TCP diretta consente di collegarsi a Finder OPTA
-con CODESYS anche quando il dispositivo non si trova nella stessa LAN del PC.
-In questo modo, se esiste un percorso di rete valido tra il PC e il PLC, è
-possibile accedere a Finder OPTA e programmarlo da remoto senza dipendere dal
-rilevamento automatico dei dispositivi.
+con CODESYS anche quando il dispositivo non si trova all'interno della stessa
+LAN del PC. In questo modo, se esiste un percorso di rete valido tra il PC e il
+PLC, è possibile accedere a Finder OPTA e programmarlo da remoto senza
+dipendere dal rilevamento automatico dei dispositivi.

@@ -6,9 +6,9 @@ Learn how to remotely connect to Finder OPTA using CODESYS.
 
 CODESYS can automatically detect Finder OPTA when the PC and PLC are on the
 same local network. This mechanism works well within LANs, but it does not work
-when the device is on a different network.
+when the PC and the PLC belong to different networks.
 
-This limitation exists because CODESYS normally discovers Finder OPTA devices
+This limitation exists because CODESYS normally discovers Finder OPTA
 using UDP broadcast messages, which are limited to the local network and are
 not forwarded by routers. To overcome this limitation, Finder OPTA can be
 accessed using a direct TCP connection, provided that network connectivity
