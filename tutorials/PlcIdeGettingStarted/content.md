@@ -20,7 +20,7 @@ Before you begin, make sure you have:
 * [PLC Finder OPTA](https://opta.findernet.com/en/arduino) (x1)
 * USB-C cable (x1)
 * The Arduino PLC IDE installer. You can download it [at this
-  link](https://opta.findernet.com/en/arduino#download-ide).
+  link](https://opta.findernet.com/wp-content/themes/picostrap5-child-base-main/download/Arduino-PLC-IDE-Installer_1.1.0_Windows_64bit.exe.zip).
 
 ## Instructions
 
