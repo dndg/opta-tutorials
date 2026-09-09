@@ -61,7 +61,7 @@ Before starting, make sure you have:
   link](https://opta.findernet.com/en/tutorial/codesys-via-ethernet).
 - A Finder OPTA already configured as a Modbus TCP server in CODESYS, as
   described in [this
-  tutorial](https://opta.findernet.com/en/tutorial/codesys-modbus-tcp-server).
+  tutorial](https://opta.findernet.com/tutorial/implementare-un-server-modbus-tcp).
 
 To follow this tutorial you will need to power both Finder OPTA devices with
 the switching power supply for OPTA CODESYS, and to connect them to the same
@@ -75,7 +75,7 @@ tutorial the Finder OPTA acting as server keeps the default IP address
 `10.0.0.3` of the same subnet. Our PC is configured at the address `10.0.0.1`.
 If both your devices still have the factory IP address, connect them one at a
 time and change the address of the one that will act as client, as explained in
-[this tutorial](https://opta.findernet.com/tutorial/implementare-un-server-modbus-tcp).
+[this tutorial](https://opta.findernet.com/en/tutorial/change-ip-codesys).
 
 ## Instructions to create the Modbus TCP client
 
@@ -220,7 +220,7 @@ channel values as follows:
 - Length: `1`, we read a single register.
 - Error handling: `Keep last value`.
 
-The server updates its variable once per second, so reading every `500` ms is
+The server updates its variable once per second, so reading every `100` ms is
 enough to promptly follow its changes. Note that both CODESYS projects count
 register addresses starting from `0`, so the offset of the channel matches the
 starting address configured on the server without any conversion.
@@ -273,7 +273,7 @@ Now we need to associate the `state` variable with the Modbus channel we
 configured, so that it contains the value read from the server. In the side
 menu, double-click on `Modbus_TCP_Server (Modbus TCP Server)`, then click on
 the `ModbusTCPServer I/O Mapping` section and double-click the `Variable` cell
-of the `State` channel to make the options button appear.
+of the `Channel 0` channel to make the options button appear.
 
 ![Variable mapping](assets/en/20-variable-mapping.png)
 
@@ -416,7 +416,7 @@ overwrite the program running on the Finder OPTA, confirm it.
 
 ![Server login](assets/en/31-server-login.png)
 
-The `ModbusTCP_Server_Device` tab shows the real-time value of the variable
+The `PLC_PRG` tab shows the real-time value of the variable
 written in the Input Register, which changes once per second.
 
 ![Server realtime values](assets/en/32-server-realtime-values.png)
@@ -446,7 +446,7 @@ At this point the four LEDs of the Finder OPTA acting as client switch on one
 at a time, following the value published by the server: the LEDs light up in
 sequence and the cycle restarts every four seconds.
 
-The `Modbus_TCP_Server` tab of the client project shows the value read from the
+The `PLC_PRG` tab of the client project shows the value read from the
 channel in real time, which is useful to verify the communication even without
 looking at the LEDs.
 
