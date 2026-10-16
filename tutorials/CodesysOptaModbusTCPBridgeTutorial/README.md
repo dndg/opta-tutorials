@@ -8,4 +8,4 @@ both devices follow the same commands.
 The tutorial is available in:
 
 - [English](./content.md)
-<!-- - [Italian](./content-it.md) -->
+- [Italian](./content-it.md)

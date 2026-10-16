@@ -17,11 +17,11 @@ LEDs.
 We will first configure the server side of Opta A and verify with
 `mbpoll` that each coil controls its local LED. Next, we will
 add the client side of Opta A, using four cyclic Write Single Coil
-channels. Finally, we will adapt the Opta B project from the existing [Modbus TCP
-server tutorial](../CodesysOptaModbusTCPServerTutorial/content.md) and test the complete bridge.
+channels. Finally, we will adapt the Opta B project from the existing Modbus TCP
+server tutorial <!-- TODO: Add the public URL of the English Modbus TCP server tutorial when available. --> and test the complete bridge.
 
-The client configuration follows the approach of the [Modbus TCP
-client tutorial](../CodesysOptaModbusTCPClientTutorial/content.md), but here the client writes coils instead of reading
+The client configuration follows the approach of the Modbus TCP
+client tutorial <!-- TODO: Add the public URL of the English Modbus TCP client tutorial when available. -->, but here the client writes coils instead of reading
 an Input Register.
 
 ## Goals
@@ -52,8 +52,8 @@ Before starting, make sure you have:
   guide](https://opta.findernet.com/en/tutorial/codesys-via-ethernet).
 - [mbpoll](https://github.com/epsilonrt/mbpoll) installed
   on your PC.
-- The CODESYS project created in the [Modbus TCP
-  server tutorial](../CodesysOptaModbusTCPServerTutorial/content.md), to use as the starting point for Opta B.
+- The CODESYS project created in the Modbus TCP
+  server tutorial <!-- TODO: Add the public URL of the English Modbus TCP server tutorial when available. -->, to use as the starting point for Opta B.
 
 Use the following network configuration, consistent with the client
 tutorial:
@@ -243,11 +243,6 @@ Open its `General` tab and configure:
 
 ![Configure the Opta A server and coil area](assets/en/15-local-server-coil-config.png)
 
-Keep the holding and input register areas separate.
-`Discrete Bit Areas` gives coils their own data area instead
-of sharing the register memory, as explained in the [CODESYS
-server configuration reference](https://content.helpme-codesys.com/en/CODESYS%20Modbus/_mod_edt_slave_device_tcp.html).
-
 ### Mapping the received coils and LEDs
 
 Open `Modbus TCP Server Device I/O Mapping` and expand the
@@ -271,11 +266,6 @@ follows:
 - Coil address `3`: `PLC_PRG.inputCoil_3`.
 
 ![Check the four incoming coil mappings](assets/en/18-local-server-coils-mapped.png)
-
-If the driver displays coils as bits inside a byte, expand that byte
-and map the individual bit rows. Leave the parent byte unmapped when
-mapping its bits; the [CODESYS
-I/O Mapping reference](https://content.helpme-codesys.com/en/CODESYS%20Development%20System/_cds_edt_device_io_mapping.html) explains this restriction.
 
 Now open `I/O` > `Opta I/O Mapping` and
 locate the LED outputs.
@@ -330,7 +320,7 @@ mbpoll -m tcp -t 0 -0 -r 0 -1 10.0.0.3 0
 
 LED 1 of Opta A should switch off.
 
-In the mbpoll command
+In the mbpoll command:
 
 - `-m tcp` selects Modbus TCP
 - `-t 0` selects coils
@@ -442,8 +432,8 @@ and running.
 
 ## Adapting Opta B from the server tutorial
 
-Create a new CODESYS project by following the [Modbus TCP
-server tutorial](../CodesysOptaModbusTCPServerTutorial/content.md), up to and
+Create a new CODESYS project by following the Modbus TCP
+server tutorial <!-- TODO: Add the public URL of the English Modbus TCP server tutorial when available. -->, up to and
 including the section on downloading the program to Finder OPTA. This gives
 you a working Modbus TCP server project to use as the starting point for
 Opta B in this tutorial. You can skip the HMI sections. In the following
@@ -603,12 +593,15 @@ mbpoll -m tcp -t 0 -0 -r 0 -c 4 -1 10.0.0.2
 
 ![Compare the coil values on both Opta devices](assets/en/49-mbpoll-bridge-test.png)
 
-After allowing the client channels to execute, both reads should show
-the same four values. A successful write response from Opta A confirms
-only the PC-to-Opta-A transaction. Check Opta B's coils and LEDs to
-confirm delivery through the second transaction.
+Now check the coil values from Codesys by connecting to each device. Check that the variables have changed correctly and are coherent with the values read with mbpoll. They should be all set to `TRUE`.
 
-![Monitor the bridge write values in CODESYS](assets/en/50-bridge-realtime-values.png)
+Values on Finder Opta A.
+
+![Monitor the bridge write Opta A values in CODESYS](assets/en/50-bridge-realtime-values-opta-a.png)
+
+Values on Finder Opta B.
+
+![Monitor the bridge write Opta B values in CODESYS](assets/en/51-bridge-realtime-values-opta-b.png)
 
 Check the physical LEDs on both devices as well: each pair of
 corresponding LEDs should follow the same ON/OFF command.
@@ -636,15 +629,7 @@ diagnostics, and current output values online. Reduce the test to the
 first FC05 channel if necessary.
 
 Check that every channel uses `Cyclic` and that its write
-value is mapped to the intended `outputCoil` variable. Confirm
-the selected bus task actually runs `PLC_PRG`. Changing a bus
-cycle setting does not fix an incorrect destination IP, offset, or data
-mapping.
-
-After verifying the bridge, save both working projects and record the
-CODESYS, OPTA plug-in, and runtime versions, together with the task and
-channel periods. This provides a reference configuration when extending
-the example.
+value is mapped to the intended `outputCoil` variable.
 
 ## Conclusions
 
